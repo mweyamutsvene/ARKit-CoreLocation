@@ -9,7 +9,7 @@ import Foundation
 import SceneKit
 import CoreLocation
 
-open class LocationAnnotationNode: LocationNode {
+public class LocationAnnotationNode: LocationNode {
     /// Subnodes and adjustments should be applied to this subnode
     /// Required to allow scaling at the same time as having a 2D 'billboard' appearance
     public let annotationNode: AnnotationNode
@@ -19,8 +19,10 @@ open class LocationAnnotationNode: LocationNode {
     /// Setting to true causes annotation nodes to scale like a regular node
     /// Scaling relative to distance may be useful with local navigation-based uses
     /// For landmarks in the distance, the default is correct
+	@objc
     public var scaleRelativeToDistance = false
 
+	@objc
     public init(location: CLLocation?, image: UIImage) {
         let plane = SCNPlane(width: image.size.width / 100, height: image.size.height / 100)
         plane.firstMaterial!.diffuse.contents = image
@@ -44,6 +46,7 @@ open class LocationAnnotationNode: LocationNode {
     /// - Parameters:
     ///   - location: The location of the node in the world.
     ///   - view: The view to display at the specified location.
+	@objc
     public init(location: CLLocation?, view: UIView) {
         let plane = SCNPlane(width: view.frame.size.width / 100, height: view.frame.size.height / 100)
         plane.firstMaterial!.diffuse.contents = view
