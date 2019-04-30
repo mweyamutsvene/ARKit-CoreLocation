@@ -30,6 +30,7 @@ public class SceneLocationView: ARSCNView {
 	}
     /// The method to use for determining locations.
     /// Not advisable to change this as the scene is ongoing.
+	@objc
     public var locationEstimateMethod: LocationEstimateMethod {
         get {
             return sceneLocationManager.locationEstimateMethod

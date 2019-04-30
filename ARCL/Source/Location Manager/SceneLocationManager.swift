@@ -12,7 +12,8 @@ import CoreLocation
 import MapKit
 
 ///Different methods which can be used when determining locations (such as the user's location).
-public enum LocationEstimateMethod {
+@objc
+public enum LocationEstimateMethod : Int {
     ///Only uses core location data.
     ///Not suitable for adding nodes using current position, which requires more precision.
     case coreLocationDataOnly
